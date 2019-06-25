@@ -1,0 +1,7 @@
+/* pages/search/search.wxss */
+.github-search_list {
+  padding: 20rpx;
+}
+.search_item {
+  margin-bottom: 10px;
+}

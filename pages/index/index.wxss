@@ -1,0 +1,14 @@
+/**index.wxss**/
+.search__input {
+  width: 100%;
+}
+.search__label {
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  color: #333;
+}
+.search__btn {
+  margin-top: 50rpx;
+  width: 80%;
+}

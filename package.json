@@ -1,0 +1,15 @@
+{
+  "name": "github-search",
+  "version": "1.0.0",
+  "description": "简易小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "陈焦滨&kevin",
+  "license": "ISC",
+  "dependencies": {
+    "flyio": "^0.6.14",
+    "vant-weapp": "^0.5.15"
+  }
+}
