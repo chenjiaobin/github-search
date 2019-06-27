@@ -40,13 +40,24 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "扫描小程序场景值",
+					"pathName": "pages/index/index",
+					"scene": 1047
+				}
+			]
 		}
 	}
 }

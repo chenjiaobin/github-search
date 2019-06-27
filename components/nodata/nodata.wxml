@@ -1,0 +1,4 @@
+<view class="no-data">
+  <image class="no-data__img" src="../../assets/img/no-data.png"></image>
+  <view class="no-data__text">{{text}}</view>
+</view>

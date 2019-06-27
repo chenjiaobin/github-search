@@ -1,3 +1,4 @@
+// pages/repositories/repositories.js
 import * as githubApi from '../../api/github.js'
 
 Page({
@@ -33,6 +34,20 @@ Page({
   },
 
   /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
@@ -57,15 +72,15 @@ Page({
   },
 
   // 获取列表数据
-  loadList (username, page = 1) {
-    githubApi.getFollower({ username: username, params: { page: page } }).then(res => {
+  loadList(value, page = 1) {
+    githubApi.getRepositories({ q: value, page: page }).then(res => {
       if (page === 1) {
         this.setData({
-          list: [].concat(res.items)
+          list: [].concat(res.data)
         })
-      } else  {
+      } else {
         this.setData({
-          list: this.data.list.concat(res.items)
+          list: this.data.list.concat(res.data)
         })
       }
       this.setData({
@@ -79,10 +94,10 @@ Page({
     })
   },
 
-  toGithub (event) {
-    // let url = event.currentTarget.dataset.githuburl
-    // wx.navigateTo({
-    //   url: `/pages/webview/webview?outsrc=${url}`,
-    // })
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

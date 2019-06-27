@@ -1,9 +1,9 @@
-/* pages/search/search.wxss */
+/* pages/repositories/repositories.wxss */
 .github-search_list {
   padding: 20rpx;
 }
 .search_item {
-  margin-bottom: 20rpx;
+  margin-bottom: 10px;
   border-bottom: 1px solid #eaecef;
 }
 .no-data__type {

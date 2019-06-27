@@ -3,8 +3,8 @@
   <view class="search__input">   
     <van-search value="{{ search.key }}" size="large" placeholder="请输入搜索关键词" bind:change="searchChange">
       <view slot="label" class="search__label">
-        <picker bindchange="pickerChange" value="{{search.type}}" range="{{columns}}" range-key="name">
-          <view class="picker">{{columns[search.type].name}}</view>
+        <picker bindchange="pickerChange" value="{{search.typeIndex}}" range="{{columns}}" range-key="name">
+          <view class="picker">{{columns[search.typeIndex].name}}</view>
         </picker>
       </view>
     </van-search>

@@ -7,7 +7,10 @@ const http = new Fly()
 http.config.baseURL = 'https://api.github.com'
 
 http.interceptors.request.use(request => {
-
+  // request.headers = {
+  //   "token": 'd9b0878a0073304b530334120d59d009e41438dd'
+  // }
+  // return request
 })
 
 // 请求回调响应

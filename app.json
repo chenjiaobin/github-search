@@ -1,13 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/webview/webview",
+    "pages/repositories/repositories"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json"
 }

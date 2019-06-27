@@ -1,0 +1,13 @@
+/* components/nodata/nodata.wxss */
+.no-data {
+	padding: 2em 0;
+	text-align: center;
+}
+.no-data__img {
+	width: 280rpx;
+	height: 280rpx;
+}
+.no-data__text {
+	font-size: 52rpx;
+	color: #ccc;
+}

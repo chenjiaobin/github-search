@@ -1,0 +1,3 @@
+<view class="page-section page-section-gap">
+  <web-view src="{{outSrc}}"></web-view>
+</view>

@@ -1,6 +1,7 @@
+<!--pages/repositories/repositories.wxml-->
 <view class="github-search_list">
   <view class="van-tag__text">
-    <van-tag mark type="primary" size="large">当前用户的Followers：</van-tag>
+    <van-tag mark type="primary" size="large">搜索关键词下的仓库：</van-tag>
   </view>
   <view class="no-data__type">
     <van-loading type="spinner" color="#1989fa" wx:if="{{loading}}"/>
@@ -9,10 +10,10 @@
   <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
     <view bindtap="toGithub" data-githubURL="{{item.html_url}}">
       <van-row gutter="15px" custom-class="search_item">
-        <van-col span="5">
-          <image style="width: 50px; height: 50px; background-color: #eeeeee;" src="{{item.avatar_url}}"></image>
+        <van-col span="24">{{item.full_name}}</van-col>
+        <van-col span="24">
+          <text>star：{{item.stargazers_count}}</text>
         </van-col>
-        <van-col span="19">{{item.login}}</van-col>
       </van-row>
     </view>
   </block>
