@@ -3,7 +3,8 @@
   padding: 20rpx;
 }
 .search_item {
-  margin-bottom: 10px;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
   border-bottom: 1px solid #eaecef;
 }
 .no-data__type {
@@ -11,4 +12,36 @@
 }
 .van-tag__text {
   margin-bottom: 30rpx;
+}
+.search_item__fullname {
+  color: #0366d6;
+}
+.search_item__language {
+  font-size: 32rpx;
+  padding: 10rpx 0;
+}
+.search_item__description {
+  font-size: 28rpx;
+}
+.search_item__starAndFork {
+  text-align: right;
+}
+.star, .fork {
+  display: inline-block;
+  font-size: 28rpx;
+}
+.star {
+  margin-right: 20rpx;
+}
+.star__title {
+  color: orange;
+  font-weight: bold;
+}
+.fork__title {
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.github__sort {
+  margin-bottom: 16rpx;
+  font-size: 34rpx;
 }

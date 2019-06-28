@@ -61,11 +61,11 @@ Page({
     githubApi.getFollower({ username: username, params: { page: page } }).then(res => {
       if (page === 1) {
         this.setData({
-          list: [].concat(res.items)
+          list: [].concat(res.data)
         })
       } else  {
         this.setData({
-          list: this.data.list.concat(res.items)
+          list: this.data.list.concat(res.data)
         })
       }
       this.setData({

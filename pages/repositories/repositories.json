@@ -4,6 +4,10 @@
     "van-col": "../../miniprogram_npm/vant-weapp/col/index",
     "no-data": "../../components/nodata/nodata",
     "van-loading": "../../miniprogram_npm/vant-weapp/loading/index",
-    "van-tag": "../../miniprogram_npm/vant-weapp/tag/index"
+    "van-tag": "../../miniprogram_npm/vant-weapp/tag/index",
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
+    "van-picker": "../../miniprogram_npm/vant-weapp/picker/index",
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+    "van-button": "../../miniprogram_npm/vant-weapp/button/index"
   }
 }
