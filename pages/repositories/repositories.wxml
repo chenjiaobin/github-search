@@ -21,7 +21,7 @@
     <view bindtap="toGithub" data-githubURL="{{item.html_url}}">
       <van-row gutter="15px" custom-class="search_item">
         <van-col span="24" class="search_item__fullname">{{item.full_name}}</van-col>
-        <van-col span="24" class="search_item__language" wx:if="item.language">
+        <van-col span="24" class="search_item__language" wx:if="{{item.language}}">
           <van-icon name="award-o" color="#03a9f4"/>
           <text decode="{{true}}">&nbsp;{{item.language}}</text>
         </van-col>
