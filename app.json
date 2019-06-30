@@ -8,7 +8,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "GitHub小应用",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
