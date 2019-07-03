@@ -21,7 +21,7 @@ export const getCurrentUserInfo = (params) => {
  * 获取所有关键词下的仓库列表
  * page: 页数
  * per_page: 页面条数
- * q: 搜索关键词
+ * q: 搜索关键词(https://help.github.com/en/articles/searching-for-repositories)
  * sort: (stars,forks,help-wanted-issues)
  * order: (asc,desc默认)
  * 例子：https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
