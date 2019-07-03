@@ -1,5 +1,10 @@
 //index.js
 import * as githubApi from '../../api/github.js'
+const Fly = require("../../miniprogram_npm/flyio/index.js")
+const http = new Fly()
+// http.config.headers = {
+//   "Authorization": 'token d9b0878a0073304b530334120d59d009e41438dd'
+// }
 
 //获取应用实例
 const app = getApp()
@@ -24,7 +29,18 @@ Page({
   },
 
   onLoad: function () {
-
+    githubApi.getCurrentUserInfo().then(res => {
+      console.log(res)
+    })
+    // githubApi.createRepo({ name: 'df' })
+    // http.post('https://api.github.com/user/repos', {
+    //   name: 'Doris'
+    // }).then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
   },
 
   // 搜索框回调
