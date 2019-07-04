@@ -11,5 +11,21 @@
     "navigationBarTitleText": "GitHub小应用",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/repositories/repositories",
+        "text": "接口"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

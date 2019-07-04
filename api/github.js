@@ -93,3 +93,13 @@ export const watchRepo = (params) => {
 export const stopWatchRepo = (params) => {
   return http.delete(`/user/subscriptions/${params.username}/${params.repo}`)
 }
+
+// follow某个github账户
+export const followUser = (params) => {
+  return http.put(`/user/following/${params.username}`)
+}
+
+// 取消follow某个githun账户
+export const unFollowUser = (params) => {
+  return http.delete(`/user/following/${params.username}`)
+}

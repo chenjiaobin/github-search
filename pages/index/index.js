@@ -80,8 +80,11 @@ Page({
 
   // 前往仓库列表页面
   navigateToRepositories () {
-    wx.navigateTo({
-      url: `/pages/repositories/repositories?key=${this.data.search.key}`
+    // wx.navigateTo({
+    //   url: `/pages/repositories/repositories?key=${this.data.search.key}`
+    // })
+    wx.switchTab({
+      url: `/pages/repositories/repositories?key=${this.data.search.key}`,
     })
   },
 

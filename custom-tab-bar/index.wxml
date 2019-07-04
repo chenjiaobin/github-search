@@ -1,0 +1,14 @@
+<!--custom-tab-bar/custom-tab-bar.js.wxml-->
+<view class="gh-bar gh-bg-white gh-gray">
+  <view class="gh-bar__item">
+    <view class="iconfont ghub-github-fill gh-bar__item-icon"></view>
+    <text class="gh-bar__item-tag">仓库</text>
+  </view>
+  <view class="gh-bar__item gh-bar__avatar-out">
+    <view class="iconfont ghub-github-fill gh-bar__item-icon gh-bar__avatar-inner"></view>
+  </view>
+  <view class="gh-bar__item">
+    <view class="iconfont ghub-wo gh-bar__item-icon"></view>
+    <text class="gh-bar__item-tag">我</text>
+  </view>
+</view>

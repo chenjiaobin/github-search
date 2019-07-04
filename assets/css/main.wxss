@@ -1,0 +1,21 @@
+/* 文字颜色 */
+.gh-green {
+  color: #4cd964;
+}
+.gh-white {
+  color: #ffffff;
+}
+.gh-gray {
+  color: gray;
+}
+
+
+/* 背景色 */
+.gh-bg-green {
+  color: #4cd964;
+}
+.gh-bg-white {
+  background: #ffffff;
+}
+
+

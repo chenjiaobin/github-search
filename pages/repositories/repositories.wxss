@@ -1,4 +1,7 @@
 /* pages/repositories/repositories.wxss */
+view {
+  word-break: break-all
+}
 .github-search_list {
   padding: 20rpx;
 }
@@ -22,6 +25,12 @@
 }
 .search_item__description {
   font-size: 28rpx;
+}
+.search_item__description .van-col{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 .search_item__starAndFork {
   text-align: right;
