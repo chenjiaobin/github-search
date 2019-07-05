@@ -27,3 +27,14 @@
   color: #ccc;
   margin-top: 10rpx;
 }
+
+
+.gh-tab {
+  padding: 0 40rpx;
+}
+.gh-tab-item {
+  display: inline-block;
+  font-size: 32rpx;
+  padding-bottom: 10rpx;
+  margin-right: 30rpx;
+}

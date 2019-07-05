@@ -1,0 +1,68 @@
+<!--pages/index/repo-all/repo-all.wxml-->
+<view class="gh-repo_search-all">
+  <van-search
+    value="{{search.key}}"
+    placeholder="请输入搜索关键词"
+    use-action-slot
+    shape="round"
+    bind:search="onSearch"
+    bind:change="searchChange"
+  >
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+  <view class="gh-repo_search-contain gh-text-small">
+    <van-row gutter="15px">
+      <van-col span="8">
+        <picker bindchange="pickerChange_lang" value="{{search.langIndex}}" range="{{col_language}}">
+          <view class="gh-picker_item">语言：{{col_language[search.langIndex]}}</view>
+          <van-icon name="arrow-down" custom-class="gh-filter"/>
+        </picker>
+      </van-col>
+      <van-col span="8">
+        <picker bindchange="pickerChange_type" value="{{search.typeIndex}}" range="{{col_type}}">
+          <view class="gh-picker_item">分类：{{col_type[search.typeIndex]}}</view>
+          <van-icon name="arrow-down" custom-class="gh-filter"/>
+        </picker>
+      </van-col>
+      <van-col span="8">
+        <picker bindchange="pickerChange_order" value="{{search.orderIndex}}" range="{{col_order}}">
+          <view class="gh-picker_item">分类：{{col_order[search.orderIndex]}}</view>
+          <van-icon name="arrow-down" custom-class="gh-filter"/>
+        </picker>
+      </van-col>
+    </van-row>
+  </view>
+  <scroll-view 
+    scroll-with-animation 
+    class="gh-swiper-box-list" 
+    scroll-y
+    enable-back-to-top
+    bindscrolltolower="loadMore">
+    <view class="gh-repo_list">
+      <view class="gh-repo_item" wx:for="{{repos}}" wx:key="index" wx:for-item="item">
+        <view class="gh-repo__title">{{item.full_name}}</view>
+        <view>
+          <view class="gh-repo__lang gh-repo-tag">
+            <text class="iconfont ghub-language"></text>
+            <text class="lang" decode="{{true}}">&nbsp;{{item.language}}</text>
+          </view>
+          <view class="gh-repo__star gh-repo-tag">
+            <text class="iconfont ghub-star"></text>
+            <text class="star__num num" decode="{{true}}">&nbsp;star&nbsp;</text>{{item.stargazers_count}}
+          </view>
+          <view class="gh-repo__fork gh-repo-tag">
+            <text class="iconfont ghub-fork"></text>
+            <text class="fock__num num" decode="{{true}}">&nbsp;focks&nbsp;</text>{{item.forks_count}}
+          </view>
+        </view>
+        <view class="gh-repo__desc">{{item.description}}</view>
+        <view class="gh-repo__date">更新于 {{item.updated_at}}</view>
+      </view>
+    </view>
+    <view class="no-data__type">
+      <van-loading type="spinner" color="#1989fa" wx:if="{{loading}}"/>
+      <no-data text="{{loadingText}}" wx:if="{{!repos.length && !loading}}"></no-data>
+    </view>
+  </scroll-view>
+</view>
+

@@ -12,18 +12,21 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
+    "color": "#bfbfbf",
+    "selectedColor": "#4cd964",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "组件"
+        "iconPath": "assets/img/tabbar/gh-chanku.png",
+        "selectedIconPath": "assets/img/tabbar/gh-chanku-active.png",
+        "text": "仓库"
       },
       {
         "pagePath": "pages/repositories/repositories",
-        "text": "接口"
+        "iconPath": "assets/img/tabbar/gh-me.png",
+        "selectedIconPath": "assets/img/tabbar/gh-me-active.png",
+        "text": "我"
       }
     ]
   },

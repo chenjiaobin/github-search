@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-search": "../../../miniprogram_npm/vant-weapp/search/index",
+    "van-button": "../../../miniprogram_npm/vant-weapp/button/index",
+    "van-row": "../../../miniprogram_npm/vant-weapp/row/index",
+    "van-col": "../../../miniprogram_npm/vant-weapp/col/index",
+    "van-icon": "../../../miniprogram_npm/vant-weapp/icon/index",
+    "no-data": "../../../components/nodata/nodata",
+    "van-loading": "../../../miniprogram_npm/vant-weapp/loading/index"
+  }
+}

@@ -1,0 +1,56 @@
+/* pages/index/repo-all/repo-all.wxss */
+/* 引入基础样式文件 */
+@import "/assets/css/main.wxss";
+@import "/assets/font/font.wxss";
+
+view {
+  word-break: break-all;
+}
+.gh-repo_search-all {
+  text-align: center;
+  color: #8a8a8a;
+  height: 100vh;
+}
+.gh-repo_search-contain {
+  padding: 0 10rpx 20rpx 10rpx;
+}
+.gh-filter {
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.gh-picker_item {
+  display: inline-block;
+}
+.no-data__type {
+  margin-top: 100rpx;
+}
+.gh-repo_list {
+  margin: 10rpx 0;
+  color: #000;
+}
+.gh-repo_item {
+  text-align: left;
+  margin: 0 20rpx;
+  padding: 16rpx;
+  border-bottom: 1px solid #eaecef;
+}
+.gh-repo__title {
+  font-size: 32rpx;
+}
+.gh-repo-tag {
+  display: inline-block;
+  font-size: 30rpx;
+  margin-right: 16rpx;
+}
+.gh-repo__desc {
+  font-size: 30rpx;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.gh-repo__date {
+  font-size: 26rpx;
+  text-align: right;
+  color: #ccc;
+  margin: 16rpx 0;
+}

@@ -11,6 +11,9 @@ const app = getApp()
 
 Page({
   data: {
+    // swiper当前活动页
+    tabCur: 0,
+    tabItems: ['所有', '个人'],
     search: {
       key: '',
       // colums的下标
@@ -29,9 +32,9 @@ Page({
   },
 
   onLoad: function () {
-    githubApi.getCurrentUserInfo().then(res => {
-      console.log(res)
-    })
+    // githubApi.getCurrentUserInfo().then(res => {
+    //   console.log(res)
+    // })
     // githubApi.createRepo({ name: 'df' })
     // http.post('https://api.github.com/user/repos', {
     //   name: 'Doris'
@@ -104,6 +107,24 @@ Page({
     }
     this.setData({
       search: Object.assign(this.data.search, { typeIndex: typeIndex })
+    })
+  },
+
+  // tab切换
+  tabSelect (event) {
+    console.log(event)
+    let { id } = event.currentTarget.dataset
+    this.setData({
+      tabCur: id
+    })
+  },
+
+  // swiper切换
+  changeTab (event) {
+    console.log(event)
+    let { current } = event.detail
+    this.setData({
+      tabCur: current
     })
   }
 })
