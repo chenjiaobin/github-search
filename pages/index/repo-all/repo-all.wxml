@@ -1,4 +1,5 @@
 <!--pages/index/repo-all/repo-all.wxml-->
+<wxs module="util" src="../../../utils/util.wxs"></wxs>
 <view class="gh-repo_search-all">
   <van-search
     value="{{search.key}}"
@@ -7,6 +8,7 @@
     shape="round"
     bind:search="onSearch"
     bind:change="searchChange"
+    custom-class="van-search-self"
   >
     <view slot="action" bind:tap="onSearch">搜索</view>
   </van-search>
@@ -36,6 +38,7 @@
     scroll-with-animation 
     class="gh-swiper-box-list" 
     scroll-y
+    scroll-top="{{scrollTop}}"
     enable-back-to-top
     bindscrolltolower="loadMore">
     <view class="gh-repo_list">
@@ -43,20 +46,21 @@
         <view class="gh-repo__title">{{item.full_name}}</view>
         <view>
           <view class="gh-repo__lang gh-repo-tag">
-            <text class="iconfont ghub-language"></text>
+            <text class="iconfont ghub-language lang_icon"></text>
             <text class="lang" decode="{{true}}">&nbsp;{{item.language}}</text>
           </view>
           <view class="gh-repo__star gh-repo-tag">
-            <text class="iconfont ghub-star"></text>
+            <text class="iconfont ghub-star star_icon"></text>
             <text class="star__num num" decode="{{true}}">&nbsp;star&nbsp;</text>{{item.stargazers_count}}
           </view>
           <view class="gh-repo__fork gh-repo-tag">
-            <text class="iconfont ghub-fork"></text>
+            <text class="iconfont ghub-fork fork_icon"></text>
             <text class="fock__num num" decode="{{true}}">&nbsp;focks&nbsp;</text>{{item.forks_count}}
           </view>
         </view>
         <view class="gh-repo__desc">{{item.description}}</view>
-        <view class="gh-repo__date">更新于 {{item.updated_at}}</view>
+        <view class="gh-repo__date">更新于 {{util.formatTime(item.updated_at)}}</view>
+        <!-- <view>{{util.bar('tools.FOO')}}</view> -->
       </view>
     </view>
     <view class="no-data__type">

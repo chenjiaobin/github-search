@@ -1,5 +1,6 @@
 // pages/index/repo-all/repo-all.js
 import * as githubApi from '../../../api/github.js'
+import { formatTime } from '../../../utils/util.js'
 
 Component({
   /**
@@ -28,11 +29,15 @@ Component({
     // 排序方式
     col_order: ['随机', '降序', '升序'],
     loadingText: '暂无数据',
-    loading: true
+    loading: true,
+    // scroll-view的滚动距离
+    scrollTop: 0
   },
 
   lifetimes: {
     attached: function () {
+      let a = formatTime(new Date())
+      console.log(a)
       this.getRepo()
     }
   },
@@ -47,7 +52,7 @@ Component({
    */
   methods: {
     onSearch (e) {
-      console.log('确定')
+      this.getRepo()
     },
 
     loadMore () {
@@ -60,7 +65,7 @@ Component({
 
     // 获取仓库数据
     getRepo (page = 1) {
-      let lang = this.data.search.langIndex ? `language:${this.data.col_language[this.data.search.langIndex]}` : ''
+      let lang = this.data.search.langIndex != 0 ? `language:${this.data.col_language[this.data.search.langIndex]}` : ''
       let params = {
         page: page
       }
@@ -75,22 +80,25 @@ Component({
           loading: false
         })
         wx.showToast({
-          title: '请输入关键词搜索',
+          title: '请输入关键词搜索或者选择一种语言',
           icon: 'none'
         })
         return
       }
-      if (this.data.search.order) {
-        params.order = this.data.col_order[this.data.search.order]
+      if (this.data.search.orderIndex != 0) {
+        params.order = this.data.search.orderIndex == 1 ? 'desc' : 'asc'
       }
-      if (this.data.search.sort) {
-        params.sort = this.data.col_type[this.data.search.sort]
+      if (this.data.search.typeIndex != 0) {
+        params.sort = this.data.col_type[this.data.search.typeIndex]
       }
       githubApi.getRepositories(params).then(res => {
         console.log(res)
         if (page === 1) {
           this.setData({
             repos: [].concat(res.data.items)
+          })
+          this.setData({
+            scrollTop: 0
           })
         } else {
           this.setData({
@@ -120,6 +128,7 @@ Component({
       this.setData({
         'search.langIndex': e.detail.value
       })
+      this.getRepo()
     },
 
     // 排序分类选择
@@ -127,6 +136,7 @@ Component({
       this.setData({
         'search.typeIndex': e.detail.value
       })
+      this.getRepo()
     },
 
     // 排序方式选择
@@ -134,6 +144,7 @@ Component({
       this.setData({
         'search.orderIndex': e.detail.value
       })
+      this.getRepo()
     }
   }
 })

@@ -4,7 +4,8 @@
     "van-button": "../../miniprogram_npm/vant-weapp/button/index",
     "van-picker": "../../miniprogram_npm/vant-weapp/picker/index",
     "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
-    "repo-all": "./repo-all/repo-all"
+    "repo-all": "./repo-all/repo-all",
+    "repo-self": "./repo-self/repo-self"
   },
   "navigationBarTitleText": "GitHub-仓库"
 }

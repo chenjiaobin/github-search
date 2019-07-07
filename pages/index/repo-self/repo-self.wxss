@@ -1,0 +1,17 @@
+/* pages/index/repo-self/repo-self.wxss */
+.gh-repo_repo-self {
+  margin: 10px 16px;
+}
+.gh-repo_myinfo {
+  margin-bottom: 30rpx;
+  background: red;
+  height: 200rpx;
+}
+.gh-repo_myrepo {
+  height: 300rpx;
+  background: gray;
+}
+.van-search-self {
+  padding: 0!important;
+  margin: 10px 0;
+}

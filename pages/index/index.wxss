@@ -1,34 +1,4 @@
 /**index.wxss**/
-.search__input {
-  width: 100%;
-}
-.search__label {
-  padding: 0 10rpx;
-  font-size: 28rpx;
-  line-height: 68rpx;
-  color: #333;
-}
-.search__btn {
-  margin-top: 50rpx;
-  width: 80%;
-}
-.search__rule {
-  width: 85%;
-  text-align: left;
-  margin-top: 100rpx;
-}
-.tip {
-  color: #ccc;
-  font-size: 30rpx;
-  vertical-align: top;
-}
-.search__rule__item {
-  font-size: 24rpx;
-  color: #ccc;
-  margin-top: 10rpx;
-}
-
-
 .gh-tab {
   padding: 0 40rpx;
 }

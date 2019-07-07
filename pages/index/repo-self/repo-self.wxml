@@ -1,0 +1,19 @@
+<!--pages/index/repo-self/repo-self.wxml-->
+<view class="gh-repo_repo-self">
+  <view class="gh-repo_search">
+    <van-search
+      value="{{username}}"
+      placeholder="请输入GitHub的账号查询"
+      shape="round"
+      bind:search="onSearch"
+      bind:change="searchChange"
+      custom-class="van-search-self"
+    ></van-search>
+  </view>
+  <view class="gh-repo_myinfo">
+    这是我的个人信息
+  </view>
+  <view class="gh-repo_myrepo">
+    这是我的仓库列表
+  </view>
+</view>

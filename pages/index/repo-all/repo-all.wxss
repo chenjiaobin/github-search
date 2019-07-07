@@ -9,7 +9,7 @@ view {
 .gh-repo_search-all {
   text-align: center;
   color: #8a8a8a;
-  height: 100vh;
+  height: calc(100vh - 140rpx);
 }
 .gh-repo_search-contain {
   padding: 0 10rpx 20rpx 10rpx;
@@ -47,10 +47,24 @@ view {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  padding: 10rpx 0;
 }
 .gh-repo__date {
   font-size: 26rpx;
   text-align: right;
   color: #ccc;
   margin: 16rpx 0;
+}
+.lang_icon {
+  color: #1296db;
+}
+.star_icon {
+  color: #ec965c;
+}
+.fork_icon {
+  color: #d4237a
+}
+.van-search-self {
+  padding: 0!important;
+  margin: 10px 16px;
 }

@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view class="gh-head">
-    <view>
-      <scroll-view scroll-x class="gh-tab">
+    <view class="gh-tab">
+      <scroll-view scroll-x>
         <view 
           style="pointer-events: auto;" 
           class="gh-tab-item {{index == tabCur ? 'gh-green gh-bold gh-boder-bottom gh-text-large':''}}"
@@ -17,28 +17,11 @@
     </view>
     <swiper class="gh-swiper-box" current="{{tabCur}}" :duration="300" bindchange="changeTab">
       <swiper-item>
-        <repo-all></repo-all>
+        <repo-self></repo-self>      
       </swiper-item>
       <swiper-item>
-        第二个tab
+        <repo-all></repo-all>
       </swiper-item>
     </swiper>
   </view>
-  <!-- <view class="search__input">   
-    <van-search value="{{ search.key }}" size="large" placeholder="请输入搜索关键词" bind:change="searchChange">
-      <view slot="label" class="search__label">
-        <picker bindchange="pickerChange" value="{{search.typeIndex}}" range="{{columns}}" range-key="name">
-          <view class="picker">{{columns[search.typeIndex].name}}</view>
-        </picker>
-      </view>
-    </van-search>
-  </view>
-  <van-button type="primary" size="large" round class="search__btn" bind:click="search">开始搜索</van-button>
-  <view class="search__rule">
-    <text class="tip">Tip：搜索规则?</text>
-    <view class="search__rule__item">1、点击输入框左侧文字按钮，选择搜索方式.</view>
-    <view class="search__rule__item">2、Followers：输入用户名，查询该用户Followers的用户.(比如输入用户名a)</view>
-    <view class="search__rule__item">3、仓库列表：输入仓库名关键词，查询该关键词下的仓库集合.（比如输入React\Vue等）</view>
-    <view class="search__rule__item">4、更多搜索功能尽情期待.</view>
-  </view> -->
 </view>

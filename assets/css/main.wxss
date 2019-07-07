@@ -27,7 +27,7 @@
   padding: 20rpx;
 }
 .gh-swiper-box {
-  height: 100vh
+  height: calc(100vh - 70rpx);
 }
 .gh-swiper-box-list {
   height: calc(100vh - 140rpx)
