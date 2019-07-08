@@ -1,6 +1,5 @@
 // pages/index/repo-all/repo-all.js
 import * as githubApi from '../../../api/github.js'
-import { formatTime } from '../../../utils/util.js'
 
 Component({
   /**
@@ -31,13 +30,13 @@ Component({
     loadingText: '暂无数据',
     loading: true,
     // scroll-view的滚动距离
-    scrollTop: 0
+    scrollTop: 0,
+    noMore: false,
+    loadingMore: false
   },
 
   lifetimes: {
     attached: function () {
-      let a = formatTime(new Date())
-      console.log(a)
       this.getRepo()
     }
   },
@@ -58,7 +57,9 @@ Component({
     loadMore () {
       console.log('更多')
       this.setData({
-        "search.page":  this.data.search.page + 1
+        "search.page":  this.data.search.page + 1,
+        noMore: false,
+        loadingMore: true
       })
       this.getRepo(this.data.search.page)
     },
@@ -67,7 +68,8 @@ Component({
     getRepo (page = 1) {
       let lang = this.data.search.langIndex != 0 ? `language:${this.data.col_language[this.data.search.langIndex]}` : ''
       let params = {
-        page: page
+        page: page,
+        per_page: 15
       }
       if (lang.length && this.data.search.key) {
         params.q = `${this.data.search.key}+${lang}`
@@ -92,22 +94,31 @@ Component({
         params.sort = this.data.col_type[this.data.search.typeIndex]
       }
       githubApi.getRepositories(params).then(res => {
-        console.log(res)
-        if (page === 1) {
+        this.setData({
+          loadingMore: false
+        })
+        if (!res.data.items.length) {
           this.setData({
-            repos: [].concat(res.data.items)
-          })
-          this.setData({
-            scrollTop: 0
+            'search.page': this.data.search.page - 1,
+            noMore: true
           })
         } else {
+          if (page === 1) {
+            this.setData({
+              repos: [].concat(res.data.items)
+            })
+            this.setData({
+              scrollTop: 0
+            })
+          } else {
+            this.setData({
+              repos: this.data.repos.concat(res.data.items)
+            })
+          }
           this.setData({
-            repos: this.data.repos.concat(res.data.items)
+            loading: false
           })
         }
-        this.setData({
-          loading: false
-        })
       }).catch(err => {
         this.setData({
           loading: false

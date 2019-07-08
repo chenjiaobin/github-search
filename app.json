@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/me/me",
     "pages/index/index",
     "pages/search/search",
     "pages/webview/webview",
@@ -23,12 +24,15 @@
         "text": "仓库"
       },
       {
-        "pagePath": "pages/repositories/repositories",
+        "pagePath": "pages/me/me",
         "iconPath": "assets/img/tabbar/gh-me.png",
         "selectedIconPath": "assets/img/tabbar/gh-me-active.png",
         "text": "我"
       }
     ]
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx8abaf00ee8c3202e"
+  ],
   "sitemapLocation": "sitemap.json"
 }

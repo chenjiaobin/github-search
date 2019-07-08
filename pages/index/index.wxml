@@ -17,10 +17,10 @@
     </view>
     <swiper class="gh-swiper-box" current="{{tabCur}}" :duration="300" bindchange="changeTab">
       <swiper-item>
-        <repo-self></repo-self>      
+        <repo-all></repo-all>
       </swiper-item>
       <swiper-item>
-        <repo-all></repo-all>
+        <repo-self></repo-self>      
       </swiper-item>
     </swiper>
   </view>

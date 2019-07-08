@@ -13,13 +13,14 @@ Page({
   data: {
     // swiper当前活动页
     tabCur: 0,
-    tabItems: ['所有', '个人']
+    tabItems: ['所有', '个人'],
+    show: false
   },
 
   onLoad: function () {
-    githubApi.getCurrentUserInfo().then(res => {
-      console.log(res)
-    })
+    // githubApi.getCurrentUserInfo().then(res => {
+    //   console.log(res)
+    // })
     // githubApi.createRepo({ name: 'df' })
     // http.post('https://api.github.com/user/repos', {
     //   name: 'Doris'

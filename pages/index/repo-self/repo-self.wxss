@@ -1,17 +1,140 @@
 /* pages/index/repo-self/repo-self.wxss */
+/* 引入基础样式文件 */
+@import "/assets/css/main.wxss";
+@import "/assets/font/font.wxss";
+
 .gh-repo_repo-self {
-  margin: 10px 16px;
+  margin: 10px 0;
+}
+.gh-repo_search {
+  margin: 0 16px;
 }
 .gh-repo_myinfo {
-  margin-bottom: 30rpx;
-  background: red;
-  height: 200rpx;
-}
-.gh-repo_myrepo {
-  height: 300rpx;
-  background: gray;
+  margin-bottom: 20rpx;
+  color: #fff;
+  padding: 16px;
+  background: #33da4f;
 }
 .van-search-self {
   padding: 0!important;
   margin: 10px 0;
+}
+.gh-repo_myinfo-left {
+  float: left;
+  margin-right: 30rpx;
+}
+.gh-repo_myinfo-right {
+  color: #fff;
+}
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+}
+.blog {
+  display: flex;
+}
+.blog-left {
+  flex: 90rpx 0 0;
+}
+.blog-right {
+  flex: 1;
+}
+.gh-height {
+  display: block;
+  height: 16rpx;
+}
+.bio {
+  display: flex;
+}
+.bio-left {
+  flex: 100rpx 0 0;
+}
+.bio-right {
+  flex: 1;
+}
+.follow-left {
+  margin-right: 20rpx;
+}
+.gh-swiper-repo {
+  height: calc(100vh - 540rpx);
+}
+.gh-repo_list {
+  margin: 10rpx 0;
+  color: #000;
+}
+.gh-repo_item {
+  text-align: left;
+  margin: 0 20rpx;
+  padding: 16rpx;
+  border-bottom: 1px solid #eaecef;
+}
+.gh-repo__title {
+  font-size: 32rpx;
+}
+.gh-repo-tag {
+  display: inline-block;
+  font-size: 30rpx;
+  margin-right: 16rpx;
+}
+.gh-repo__desc {
+  font-size: 30rpx;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  padding: 10rpx 0;
+}
+.gh-repo__date {
+  font-size: 26rpx;
+  text-align: right;
+  color: #ccc;
+  margin: 12rpx 0;
+}
+.lang_icon {
+  color: #1296db;
+}
+.star_icon {
+  color: #ec965c;
+}
+.fork_icon {
+  color: #d4237a
+}
+.gh-repo_myrepo-text {
+  display: block;
+  padding: 0 16px 20rpx 16px;
+  border-bottom: 2rpx solid #eaecef;
+  line-height: 50rpx;
+}
+.icon-margin {
+  margin: 0 12rpx;
+}
+.icon-account {
+  color: #fff;
+}
+.icon-name {
+  color: #fff;
+}
+.icon-blog {
+  color: #13227a;
+}
+.icon-follower {
+  color: #f4731c;
+}
+.icon-bio {
+  color: #fff;
+}
+.no-data__type {
+  text-align: center;
+}
+.no-data__type {
+  margin-bottom: 100px;
+}
+.nomore {
+  font-size: 26rpx;
+  color: gray;
+  padding: 10rpx;
+}
+.loading-more {
+  text-align: center;
 }

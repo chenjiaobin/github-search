@@ -40,5 +40,15 @@
 .gh-bg-white {
   background: #ffffff;
 }
+.clearfix::after {
+  content: '';
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
 
 

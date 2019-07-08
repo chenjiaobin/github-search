@@ -1,0 +1,8 @@
+/* pages/me/me.wxss */
+.gh-me {
+  background: #fff;
+}
+.customer-icon {
+  margin-right: 10rpx;
+  color: #4cd964;
+}

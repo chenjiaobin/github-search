@@ -1,19 +1,80 @@
 <!--pages/index/repo-self/repo-self.wxml-->
+<wxs module="util" src="../../../utils/util.wxs"></wxs>
+
 <view class="gh-repo_repo-self">
   <view class="gh-repo_search">
     <van-search
       value="{{username}}"
       placeholder="请输入GitHub的账号查询"
       shape="round"
+      use-action-slot
       bind:search="onSearch"
       bind:change="searchChange"
       custom-class="van-search-self"
-    ></van-search>
+    >
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
   </view>
-  <view class="gh-repo_myinfo">
-    这是我的个人信息
+  <view class="gh-repo_myinfo clearfix">
+    <view class="gh-repo_myinfo-left">
+      <image src="{{user.avatar}}" class="avatar"></image>
+    </view>
+    <view class="gh-repo_myinfo-right gh-text-mid gh-gray">
+      <view>账号<text class="iconfont ghub-zhanghaoguanli icon-margin icon-account"></text>{{user.account}}</view>
+      <view>Name<text decode="true">&nbsp;&nbsp;</text>{{user.name}}</view>
+      <view class="blog">
+        <view class="blog-left">Blog<text decode="true">&nbsp;&nbsp;</text></view>
+        <view class="blog-right">{{user.blog}}</view>
+      </view>
+      <text class="gh-height">\n</text>
+      <view>Following/Followers<text decode="true">&nbsp;&nbsp;</text>{{user.following}}/{{user.followers}}</view>
+      <view class="bio">
+        <view class="bio-left">Bio<text class="iconfont ghub-bianji icon-margin icon-bio"></text></view>
+        <view class="bio-right">{{user.bio}}</view>
+      </view>
+      <!-- <view>注册时间：{{user.registerTime}}</view> -->
+    </view>
   </view>
   <view class="gh-repo_myrepo">
-    这是我的仓库列表
+    <text class="gh-repo_myrepo-text gh-text-large"><text class="iconfont ghub-cangku gh-green"></text> 您的仓库：</text>
+    <view>
+      <scroll-view 
+        scroll-with-animation 
+        class="gh-swiper-repo" 
+        scroll-y
+        scroll-top="{{scrollTop}}"
+        enable-back-to-top
+        bindscrolltolower="loadMore">
+        <view class="gh-repo_list">
+          <view class="gh-repo_item" wx:for="{{repos}}" wx:key="index" wx:for-item="item">
+            <view class="gh-repo__title">{{item.full_name}}</view>
+            <view>
+              <view class="gh-repo__lang gh-repo-tag">
+                <text class="iconfont ghub-language lang_icon"></text>
+                <text class="lang" decode="{{true}}">&nbsp;{{item.language}}</text>
+              </view>
+              <view class="gh-repo__star gh-repo-tag">
+                <text class="iconfont ghub-star star_icon"></text>
+                <text class="star__num num" decode="{{true}}">&nbsp;star&nbsp;</text>{{item.stargazers_count}}
+              </view>
+              <view class="gh-repo__fork gh-repo-tag">
+                <text class="iconfont ghub-fork fork_icon"></text>
+                <text class="fock__num num" decode="{{true}}">&nbsp;focks&nbsp;</text>{{item.forks_count}}
+              </view>
+            </view>
+            <view class="gh-repo__desc">{{item.description}}</view>
+            <view class="gh-repo__date">更新于 {{util.formatTime(item.updated_at)}}</view>
+          </view>
+        </view>
+        <view class="no-data__type">
+          <van-loading type="spinner" color="#1989fa" wx:if="{{loading}}"/>
+          <no-data text="{{loadingText}}" wx:if="{{!repos.length && !loading}}"></no-data>
+          <view class="nomore" wx:if="{{repos.length && noMore}}">没有更多数据~~</view>
+          <view class="loading-more" wx:if="{{loadingMore}}">
+            <van-loading type="spinner" />
+          </view>
+        </view>
+      </scroll-view>
+    </view>
   </view>
 </view>

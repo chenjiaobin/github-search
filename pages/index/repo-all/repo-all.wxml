@@ -66,6 +66,10 @@
     <view class="no-data__type">
       <van-loading type="spinner" color="#1989fa" wx:if="{{loading}}"/>
       <no-data text="{{loadingText}}" wx:if="{{!repos.length && !loading}}"></no-data>
+      <view class="nomore" wx:if="{{repos.length && noMore}}">没有更多数据~~</view>
+      <view class="loading-more" wx:if="{{loadingMore}}">
+        <van-loading type="spinner"/>
+      </view>
     </view>
   </scroll-view>
 </view>
