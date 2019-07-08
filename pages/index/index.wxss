@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container {
+  background: #fff;
+}
 .gh-tab {
   padding: 0 40rpx;
 }

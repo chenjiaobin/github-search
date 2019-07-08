@@ -1,0 +1,69 @@
+<!--pages/login/login.wxml-->
+<view class="gh-login">
+  <view class="gh-login__logo">
+    <image src="../../assets/img/github.jpg" class="logo"></image>
+  </view>
+  <view class="gh-login__form">
+    <view class="form-tab">
+      <scroll-view scroll-x>
+        <view 
+          style="pointer-events: auto;" 
+          class="gh-tab-item {{index == tabCur ? 'gh-green gh-text-large':''}}"
+          wx:for="{{tabItems}}" 
+          wx:key="index" 
+          wx:for-item="item" 
+          bindtap="tabSelect" 
+          data-id="{{index}}">
+          {{item}}
+        </view>
+      </scroll-view>
+    </view>
+    <view class="form-input">
+      <swiper class="gh-swiper-login" current="{{tabCur}}" :duration="300" bindchange="changeTab">
+        <swiper-item>
+          <view class="login-by-token">
+            <view class="field__item">
+              <van-field
+                value="{{ token }}"
+                placeholder="请输入GitHub生成的Token"
+                right-icon-class="van-icon-self"
+                class="field__item"
+                border="{{false}}"
+                icon="question-o"
+                bind:change="accountChange"
+                bind:click-icon="onClickIcon"
+              />
+            </view>
+            <view class="field__item">
+              <van-button size="large" custom-class="ven-button-self">大号按钮</van-button>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="login-by-password">
+          <view class="field__item">
+            <van-field
+              value="{{ account }}"
+              placeholder="GitHub用户名"
+              input-class="field-self"
+              border="{{false}}"
+              bind:change="accountChange"
+            />
+          </view>
+          <view class="field__item">
+            <van-field
+              value="{{ password }}"
+              type="password"
+              placeholder="请输入密码"
+              border="{{ false }}"
+            />
+          </view>
+          <view class="field__item">
+            <van-button size="large" custom-class="ven-button-self">大号按钮</van-button>
+          </view>
+          </view>  
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

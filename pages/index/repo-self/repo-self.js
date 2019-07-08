@@ -23,7 +23,7 @@ Component({
       avatar: '../../../assets/img/avatar.png',
       account: '--',
       name: '--',
-      blog: '--m',
+      blog: '--',
       bio: '--',
       following: '--',
       followers: '--'

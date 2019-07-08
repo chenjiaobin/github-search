@@ -1,0 +1,39 @@
+/* pages/login/login.wxss */
+.gh-login {
+  height: 100vh;
+}
+.gh-login__logo {
+  padding-top: 100rpx;
+  text-align: center;
+}
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+}
+.gh-login__form {
+  width: 80%;
+  margin: 40rpx auto;
+  text-align: center;
+}
+.gh-tab-item {
+  display: inline-block;
+  font-size: 32rpx;
+  width: 50%;
+  text-align: center;
+}
+.gh-swiper-login {
+  height: 400rpx;
+  padding: 30rpx 0;
+}
+.van-icon-self {
+  color: #1989fa;
+}
+.field-index--van-field {
+  border: 2rpx solid #ccc;
+}
+.ven-button-self {
+  background-color: #4cd964!important;
+}
+.field__item {
+  margin-bottom: 60rpx;
+}

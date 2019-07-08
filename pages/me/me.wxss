@@ -1,8 +1,39 @@
 /* pages/me/me.wxss */
+page {
+  background: #F3F3F3;
+}
 .gh-me {
   background: #fff;
 }
 .customer-icon {
   margin-right: 10rpx;
   color: #4cd964;
+}
+.gh-me__info {
+  display: flex;
+  border-bottom: 2rpx solid #eaecef;
+  padding: 10rpx;
+}
+.gh-me__avatar {
+  flex: 150rpx 0 0;
+  margin-right: 15rpx;
+}
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border: 2rpx solid #fff;
+  border-radius: 10rpx;
+}
+.gh-me__text {
+  flex: 1;
+}
+.gh-me__text .name {
+  margin-bottom: 15rpx;
+}
+.gh-me__text .num {
+  font-size: 32rpx;
+  color: gray;
+}
+.gh-me__login {
+  line-height: 140rpx;
 }

@@ -1,12 +1,21 @@
 <!--pages/me/me.wxml-->
 <view class="gh-me">
-  <view class="gh-me__info"></view>
+  <view class="gh-me__info">
+    <view class="gh-me__avatar">
+      <image src="{{user.avatar}}" class="avatar"></image>
+    </view>
+    <view class="gh-me__text gh-me__login" wx:if="isLogin" bindtap="login">立即登陆</view>
+    <view wx:else class="gh-me__text">
+      <view class="name">{{user.name}}</view>
+      <view class="num">博客：{{user.blog}}</view>
+    </view>
+  </view>
   <view class="gh-me__tab">
     <van-cell-group border="{{ false }}">
       <van-cell title="帮助与反馈" is-link border="{{ false }}" bind:click="complaint">
         <text slot="icon" name="icon" class="iconfont ghub-fankuixinxi customer-icon customer-icon__help"/>
       </van-cell>
-      <van-cell title="关于GH小应用" is-link border="{{ false }}">
+      <van-cell title="关于GitHub小应用" is-link border="{{ false }}">
         <text slot="icon" name="icon" class="iconfont ghub-guanyuwomen1 customer-icon customer-icon__about"/>
       </van-cell>
     </van-cell-group>

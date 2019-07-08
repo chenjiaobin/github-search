@@ -1,18 +1,25 @@
 // pages/me/me.js
+import * as githubApi from '../../api/github.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    user: {
+      avatar: '../../assets/img/avatar.png',
+      name: '陈焦滨&kevin',
+      blog: 'chenjiaobin.github.io'
+    },
+    isLogin: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -26,7 +33,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(123)
   },
 
   /**
@@ -71,6 +78,12 @@ Page({
       extraData: {
         id: 66270
       }
+    })
+  },
+
+  login () {
+    wx.navigateTo({
+      url: '/pages/login/login',
     })
   }
 })
