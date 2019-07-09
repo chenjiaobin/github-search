@@ -103,3 +103,7 @@ export const followUser = (params) => {
 export const unFollowUser = (params) => {
   return http.delete(`/user/following/${params.username}`)
 }
+
+export const auth = (params) => {
+  return http.get('authorizations')
+}

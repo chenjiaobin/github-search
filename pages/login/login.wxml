@@ -28,14 +28,15 @@
                 placeholder="请输入GitHub生成的Token"
                 right-icon-class="van-icon-self"
                 class="field__item"
+                clearable
                 border="{{false}}"
                 icon="question-o"
-                bind:change="accountChange"
+                bind:change="tokenChange"
                 bind:click-icon="onClickIcon"
               />
             </view>
             <view class="field__item">
-              <van-button size="large" custom-class="ven-button-self">大号按钮</van-button>
+              <van-button size="large" custom-class="ven-button-self" data-index="1" bind:click="login">登录</van-button>
             </view>
           </view>
         </swiper-item>
@@ -46,6 +47,7 @@
               value="{{ account }}"
               placeholder="GitHub用户名"
               input-class="field-self"
+              clearable
               border="{{false}}"
               bind:change="accountChange"
             />
@@ -54,16 +56,27 @@
             <van-field
               value="{{ password }}"
               type="password"
+              clearable
               placeholder="请输入密码"
               border="{{ false }}"
+              bind:change="pwdChange"
             />
           </view>
           <view class="field__item">
-            <van-button size="large" custom-class="ven-button-self">大号按钮</van-button>
+            <van-button size="large" custom-class="ven-button-self" data-index="2" bind:click="login">登录</van-button>
           </view>
           </view>  
         </swiper-item>
       </swiper>
     </view>
   </view>
+  <van-dialog
+    message="{{tip}}"
+    show="{{ showTip }}"
+    show-cancel-button
+    show-confirm-button="{{false}}"
+    cancel-button-text="知道了"
+    class-name="van-dialog-self"
+    bind:close="onClose"
+  ></van-dialog>
 </view>

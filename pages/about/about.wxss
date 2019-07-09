@@ -1,0 +1,39 @@
+/* pages/about/about.wxss */
+.gh-tip {
+  padding: 40rpx 20rpx;
+}
+.gh-tip__title {
+  text-align: center;
+  font-size: 34rpx;
+}
+.tip-icon {
+  font-size: 20px;
+  margin-right: 10rpx;
+  color: #4cd964;
+}
+.gh-tip__intro {
+  padding: 30rpx 15rpx 0 15rpx;
+  font-size: 30rpx;
+}
+.gh-tip__logo {
+  font-size: 36rpx;
+  color: green;
+  font-style: italic;
+  margin-right: 8rpx;
+}
+.gh-tip__content {
+  font-size: 26rpx;
+  color: rgb(116, 116, 116);
+  padding-top: 30rpx;
+}
+.gh-tip__item {
+  display: flex;
+  margin-top: 15rpx;
+  line-height: 40rpx;
+}
+.tip_index {
+  flex: 50rpx 0 0;
+}
+.tip_text {
+  flex: 1;
+}

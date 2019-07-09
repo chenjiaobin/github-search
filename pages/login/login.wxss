@@ -37,3 +37,6 @@
 .field__item {
   margin-bottom: 60rpx;
 }
+.dialog-index--van-dialog__cancel {
+  color: #4cd964!important;
+}

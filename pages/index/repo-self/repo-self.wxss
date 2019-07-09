@@ -127,9 +127,9 @@
 .no-data__type {
   text-align: center;
 }
-.no-data__type {
+/* .no-data__type {
   margin-bottom: 100px;
-}
+} */
 .nomore {
   font-size: 26rpx;
   color: gray;

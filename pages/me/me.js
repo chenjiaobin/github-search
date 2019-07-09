@@ -1,6 +1,9 @@
 // pages/me/me.js
 import * as githubApi from '../../api/github.js'
 
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
@@ -33,7 +36,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(123)
+    let global = app.globalData.userInfo
+    if (global) {
+      this.setData({
+        user: {
+          avatar: global.avatar,
+          name: global.name,
+          blog: global.bio
+        },
+        isLogin: true
+      })
+    } else {
+      this.setData({
+        isLogin: false
+      })
+    }
   },
 
   /**
@@ -84,6 +101,13 @@ Page({
   login () {
     wx.navigateTo({
       url: '/pages/login/login',
+    })
+  },
+
+  // 应用小贴士
+  tip () {
+    wx.navigateTo({
+      url: '/pages/about/about',
     })
   }
 })

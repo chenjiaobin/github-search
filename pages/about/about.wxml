@@ -1,0 +1,29 @@
+<!--pages/about/about.wxml-->
+<view class="gh-tip">
+  <view class="gh-tip__title"><text class="iconfont ghub-icon20101 tip-icon"></text>应用小贴士</view>
+  <view class="gh-tip__intro">
+    <text class="gh-tip__logo">GitHub小应用</text>旨在帮助程序员在日常中更好的管理和查询GitHub相关信息。
+  </view>
+  <view class="gh-tip__content">
+    <view class="gh-tip__item">
+      <text class="tip_index">1、</text>
+      <text class="tip_text">登录凭证：GitHub API某些功能为了安全性，需要授权才能操作。授权可通过a.Token认证，b.账号密码认证，c.在GitHub上创建Auth apps，该应用选用a或b两种认证方式</text>  
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">2、</text>
+      <text class="tip_text">tabBar(仓库-所有)：通过关键字、语言、排列类型(stars/forks)、排列方式(升序/降序)进行GitHub仓库搜索</text>
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">3、</text>
+      <text class="tip_text">tabBar(仓库-个人)：通过输入用户名(只要是GitHub存在即可)查询个人信息，包括用户名、名字、Bio、Following、Follower以及查询的用户名下的（公有）列表。（Tip:私有仓库得授权才能查询，暂不支持，后续跟进~~）</text>
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">4、</text>
+      <text class="tip_text">帮助与反馈：如有建议请前往反馈，吐槽也可以。</text>
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">5、</text>
+      <text class="tip_text">功能持续更新中，后续会添加star、fork等在github上同等的操作，方便我们在日常GitHub管理</text>
+    </view>
+  </view>
+</view>
