@@ -85,7 +85,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '欢迎使用GitHub小应用',
+      imageUrl: '../../assets/img/share.jpg',
+      path: '/pages/index/index'
+    }
   },
 
   // 帮助与反馈
