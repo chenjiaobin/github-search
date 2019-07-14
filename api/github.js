@@ -66,17 +66,17 @@ export const createRepo = (params) => {
 
 // 检查是否stared了某个仓库
 export const checkStaringRepo = (params) => {
-  return http.get(`/user/starred/${params.username}/${params.repo}`)
+  return http.get(`/user/starred/${params.repo}`)
 }
 
 // star一个仓库
 export const starRepo = (params) => {
-  return http.put(`/user/starred/${params.username}/${params.repo}`)
+  return http.put(`/user/starred/${params.repo}`)
 }
 
 // unstar一个仓库
 export const unstarRepo = (params) => {
-  return http.delete(`/user/starred/${params.username}/${params.repo}`)
+  return http.delete(`/user/starred/${params.repo}`)
 }
 
 // 检查是否正在watching某个仓库
@@ -92,6 +92,11 @@ export const watchRepo = (params) => {
 // 停止watch某个项目
 export const stopWatchRepo = (params) => {
   return http.delete(`/user/subscriptions/${params.username}/${params.repo}`)
+}
+
+// 检测是否已经follow当前user
+export const checkFollow = (params) => {
+  return http.get(`/user/following/${params.username}`)
 }
 
 // follow某个github账户

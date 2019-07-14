@@ -5,6 +5,9 @@ page {
 .gh-me {
   background: #fff;
 }
+.label-self {
+  font-size: 36rpx;
+}
 .customer-icon {
   margin-right: 10rpx;
   color: #4cd964;

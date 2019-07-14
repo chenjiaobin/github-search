@@ -23,7 +23,7 @@
     </view>
     <view class="gh-tip__item">
       <text class="tip_index">5、</text>
-      <text class="tip_text">功能持续更新中，后续会添加star、fork等在github上同等的操作，方便我们在日常GitHub管理</text>
+      <text class="tip_text">star和follow：在首页的仓库列表可以点击star和follow仓库（Tip：需要GitHub凭证认证，所以请先登陆实现认证才可使用）</text>
     </view>
   </view>
 </view>

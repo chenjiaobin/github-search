@@ -1,5 +1,9 @@
 // pages/index/repo-all/repo-all.js
 import * as githubApi from '../../../api/github.js'
+import config from '../../../utils/config.js'
+
+//获取应用实例
+const app = getApp()
 
 Component({
   /**
@@ -156,6 +160,132 @@ Component({
         'search.orderIndex': e.detail.value
       })
       this.getRepo()
+    },
+
+    // github仓库的star操作
+    gh_stars (e) {
+      let { repo } = e.currentTarget.dataset
+      let global = app.globalData.userInfo
+      let storage = wx.getStorageSync(config.github_user_info)
+      if (!global && !storage) {
+        wx.showModal({
+          title: '提示',
+          content: '当前操作需要GitHub的凭证认证',
+          confirmText: '前往认证',
+          success(res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/login/login',
+              })
+            }
+          }
+        })
+        return
+      }
+      githubApi.checkStaringRepo({ repo }).catch(err => {
+        if (!err) {
+          let that = this
+          // 关注过了，那这里就调用取消关注
+          wx.showModal({
+            content: '您已经关注过了，是否取消关注？',
+            confirmText: '取消关注',
+            success(res) {
+              if (res.confirm) {
+                that.unStar(repo)
+              }
+            }
+          })
+        } else {
+          this.star(repo)
+        }
+      })
+    },
+
+    // 关注仓库
+    star (repo) {
+      githubApi.starRepo({ repo }).catch(err => {
+        if (!err) {
+          wx.showToast({
+            title: '关注成功',
+            icon: 'none'
+          })
+        }
+      })
+    },
+
+    // 取消关注
+    unStar (repo) {
+      githubApi.unstarRepo({ repo }).catch(err => {
+        if (!err) {
+          wx.showToast({
+            title: '成功取消关注',
+            icon: 'none'
+          })
+        }
+      })
+    },
+
+    // follow用户
+    gh_follow (e) {
+      let { username } = e.currentTarget.dataset
+      let global = app.globalData.userInfo
+      let storage = wx.getStorageSync(config.github_user_info)
+      if (!global && !storage) {
+        wx.showModal({
+          title: '提示',
+          content: '当前操作需要GitHub的凭证认证',
+          confirmText: '前往认证',
+          success(res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/login/login',
+              })
+            }
+          }
+        })
+        return
+      }
+      githubApi.checkFollow({ username }).catch(err => {
+        if (!err) {
+          let that = this
+          // 关注过了，那这里就调用取消关注
+          wx.showModal({
+            content: '您已经Follow过了，是否取消？',
+            confirmText: '取消跟随',
+            success(res) {
+              if (res.confirm) {
+                that.unFollow(username)
+              }
+            }
+          })
+        } else {
+          this.follow(username)
+        }
+      })
+    },
+
+    follow (username) {
+      console.log('成功')
+      githubApi.followUser({ username }).catch(err => {
+        if (!err) {
+          wx.showToast({
+            title: 'Follow成功',
+            icon: 'none'
+          })
+        }
+      })
+    },
+
+    unFollow (username) {
+      console.log('为')
+      githubApi.unFollowUser({ username }).catch(err => {
+        if (!err) {
+          wx.showToast({
+            title: '成功取消Follow',
+            icon: 'none'
+          })
+        }
+      })
     }
   }
 })

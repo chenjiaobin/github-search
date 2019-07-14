@@ -49,13 +49,13 @@
             <text class="iconfont ghub-language lang_icon"></text>
             <text class="lang" decode="{{true}}">&nbsp;{{item.language}}</text>
           </view>
-          <view class="gh-repo__star gh-repo-tag">
+          <view class="gh-repo__star gh-repo-tag" data-repo="{{item.full_name}}" bind:tap="gh_stars">
             <text class="iconfont ghub-star star_icon"></text>
             <text class="star__num num" decode="{{true}}">&nbsp;star&nbsp;</text>{{item.stargazers_count}}
           </view>
-          <view class="gh-repo__fork gh-repo-tag">
+          <view class="gh-repo__fork gh-repo-tag" data-username="{{item.owner.login}}" bind:tap="gh_follow">
             <text class="iconfont ghub-fork fork_icon"></text>
-            <text class="fock__num num" decode="{{true}}">&nbsp;focks&nbsp;</text>{{item.forks_count}}
+            <text clas s="fock__num num" decode="{{true}}">&nbsp;focks&nbsp;</text>{{item.forks_count}}
           </view>
         </view>
         <view class="gh-repo__desc">{{item.description}}</view>

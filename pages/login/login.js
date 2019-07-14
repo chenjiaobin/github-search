@@ -118,11 +118,14 @@ Page({
   getCurrentUser () {
     githubApi.getCurrentUserInfo().then(res => {
       if ('plan' in res.data) {
-        app.globalData.userInfo = {
+        let user = {
           avatar: res.data.avatar_url,
-          name: res.data.login+'/'+res.data.name,
-          bio: res.data.bio
+          name: res.data.login + '/' + res.data.name,
+          bio: res.data.bio,
+          login: res.data.login
         }
+        app.globalData.userInfo = user
+        wx.setStorageSync(config.github_user_info, user)
         wx.navigateBack({
           delta: 1
         })
@@ -133,6 +136,7 @@ Page({
           wx.removeStorageSync(config.github_account)
           wx.removeStorageSync(config.github_pwd)
         }
+        wx.removeStorageSync(config.github_user_info)
         wx.showToast({
           title: '凭证认证不通过',
           icon: 'none'
@@ -145,6 +149,7 @@ Page({
         wx.removeStorageSync(config.github_account)
         wx.removeStorageSync(config.github_pwd)
       }
+      wx.removeStorageSync(config.github_user_info)
       wx.showToast({
         title: '凭证认证不通过',
         icon: 'none'

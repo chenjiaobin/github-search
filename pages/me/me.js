@@ -1,5 +1,6 @@
 // pages/me/me.js
 import * as githubApi from '../../api/github.js'
+import config from '../../utils/config.js'
 
 //获取应用实例
 const app = getApp()
@@ -37,12 +38,22 @@ Page({
    */
   onShow: function () {
     let global = app.globalData.userInfo
+    let storage = wx.getStorageSync(config.github_user_info)
     if (global) {
       this.setData({
         user: {
           avatar: global.avatar,
           name: global.name,
           blog: global.bio
+        },
+        isLogin: true
+      })
+    } else if (storage) {
+      this.setData({
+        user: {
+          avatar: storage.avatar,
+          name: storage.name,
+          blog: storage.bio
         },
         isLogin: true
       })
