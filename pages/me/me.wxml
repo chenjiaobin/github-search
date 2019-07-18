@@ -11,15 +11,15 @@
     </view>
   </view>
   <view class="gh-me__tab">
-    <van-cell-group border="{{ false }}">
-      <van-cell title="帮助与反馈" is-link border size="large" bind:click="complaint">
+    <van-cell-group>
+      <van-cell title="帮助与反馈" is-link size="large" bind:click="complaint">
         <text slot="icon" name="icon" class="iconfont ghub-fankuixinxi customer-icon customer-icon__help"/>
       </van-cell>
-      <van-cell title="关于GitHub小应用" is-link border="{{ false }}" size="large" bind:click="tip">
+      <van-cell title="关于GitHub小应用" is-link size="large" bind:click="tip">
         <text slot="icon" name="icon" class="iconfont ghub-guanyuwomen1 customer-icon customer-icon__about"/>
       </van-cell>
-      <van-cell is-link border="{{ false }}" size="large" clickable>
-        <van-button custom-class="gh-contact" slot="title" open-type="contact" size="large">客服服务</van-button>
+      <van-cell is-link size="large" clickable>
+        <button class="gh-contact" slot="title" open-type="contact" hover-stop-propagation="true">客服服务</button>
         <text slot="icon" name="icon" class="iconfont ghub-kefu customer-icon customer-icon__about"/>
       </van-cell>
     </van-cell-group>
