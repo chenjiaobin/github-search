@@ -18,6 +18,10 @@
       <van-cell title="关于GitHub小应用" is-link border="{{ false }}" size="large" bind:click="tip">
         <text slot="icon" name="icon" class="iconfont ghub-guanyuwomen1 customer-icon customer-icon__about"/>
       </van-cell>
+      <van-cell is-link border="{{ false }}" size="large" clickable>
+        <van-button custom-class="gh-contact" slot="title" open-type="contact" size="large">客服服务</van-button>
+        <text slot="icon" name="icon" class="iconfont ghub-kefu customer-icon customer-icon__about"/>
+      </van-cell>
     </van-cell-group>
   </view>
 </view>

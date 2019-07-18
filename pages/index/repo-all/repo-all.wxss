@@ -77,3 +77,15 @@ view {
 .loading-more {
   text-align: center;
 }
+.gh-refresh {
+  position: fixed;
+  bottom: 250rpx;
+  right: 50rpx;
+  background: rgb(241, 241, 241);
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 50%;
+  width: 70rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+}

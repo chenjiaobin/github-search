@@ -55,6 +55,9 @@ Component({
    */
   methods: {
     onSearch (e) {
+      wx.showLoading({
+        title: '正在加载...'
+      })
       this.getRepo()
     },
 
@@ -122,6 +125,7 @@ Component({
           this.setData({
             loading: false
           })
+          wx.hideLoading()
         }
       }).catch(err => {
         this.setData({
@@ -286,6 +290,14 @@ Component({
           })
         }
       })
+    },
+
+    // 刷新页面
+    refresh () {
+      wx.showLoading({
+        title: '正在加载...'
+      })
+      this.getRepo()
     }
   }
 })
