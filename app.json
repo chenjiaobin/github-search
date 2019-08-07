@@ -6,7 +6,8 @@
     "pages/about/about",
     "pages/search/search",
     "pages/webview/webview",
-    "pages/repositories/repositories"
+    "pages/repositories/repositories",
+    "pages/repo-detail/repo-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

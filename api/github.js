@@ -45,6 +45,14 @@ export const getRepoIssues = (params) => {
   return http.get(`/repos/${params.username}/${params.repo}/issues`, params.params)
 }
 
+/**
+ *  获取某个仓库的提交信息
+ * info就是：username/reponame
+ */
+export const getRepoCommits = (params) => {
+  return http.get(`/repos/${params.info}/commits`, params.params)
+}
+
 // 获取某个仓库的某个issue的具体信息
 export const getRepoIssuesDetail = (params) => {
   return http.get(`/repos/${params.username}/${params.repo}/issues/${params.issueID}`, params.params)

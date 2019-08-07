@@ -1,0 +1,12 @@
+<!--pages/repo-detail/repo-detail.wxml-->
+<view class="gh-step">
+  <van-steps
+    steps="{{ step }}"
+    direction="vertical"
+    active="{{ active }}"
+    custom-class="gh-step-color"
+  />
+  <view class="gh-refresh" bindtap="goTop">
+    <text class="iconfont ghub-top"></text>
+  </view>
+</view>

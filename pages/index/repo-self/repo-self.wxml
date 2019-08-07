@@ -47,7 +47,7 @@
         bindscrolltolower="loadMore">
         <view class="gh-repo_list">
           <view class="gh-repo_item" wx:for="{{repos}}" wx:key="index" wx:for-item="item">
-            <view class="gh-repo__title">{{item.full_name}}</view>
+            <view class="gh-repo__title" data-name="{{item.full_name}}" bindtap="toDetail">{{item.full_name}}</view>
             <view>
               <view class="gh-repo__lang gh-repo-tag">
                 <text class="iconfont ghub-language lang_icon"></text>

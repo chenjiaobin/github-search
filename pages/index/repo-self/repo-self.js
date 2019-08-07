@@ -163,5 +163,12 @@ Component({
         })
       })
     },
+
+    toDetail (e) {
+      let { name } = e.currentTarget.dataset
+      wx.navigateTo({
+        url: `/pages/repo-detail/repo-detail?name=${name}`,
+      })
+    }
   }
 })

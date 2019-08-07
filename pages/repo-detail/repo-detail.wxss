@@ -1,0 +1,23 @@
+/* pages/repo-detail/repo-detail.wxss */
+.gh-step-color .van-step {
+  color: #000;
+}
+.gh-step-color .van-step__circle {
+  background-color: #4cd964;
+}
+.gh-step-color .van-step__title view:nth-child(2) {
+  color: #707070;
+}
+.gh-refresh {
+  position: fixed;
+  bottom: 250rpx;
+  right: 50rpx;
+  background: rgb(241, 241, 241);
+  color: #000;
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 50%;
+  width: 70rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
