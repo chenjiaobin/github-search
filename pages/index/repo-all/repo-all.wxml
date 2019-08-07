@@ -40,7 +40,8 @@
     scroll-y
     scroll-top="{{scrollTop}}"
     enable-back-to-top
-    bindscrolltolower="loadMore">
+    bindscrolltolower="loadMore"
+    bindscroll="scroll">
     <view class="gh-repo_list">
       <view class="gh-repo_item" wx:for="{{repos}}" wx:key="index" wx:for-item="item">
         <view class="gh-repo__title">{{item.full_name}}</view>
@@ -72,8 +73,11 @@
       </view>
     </view>
   </scroll-view>
-  <view class="gh-refresh" bind:tap="refresh">
-    <text class="iconfont ghub-Loading"></text>
+  <view class="gh-refresh">
+    <view class="{{isTop ? 'top-end' : 'top-start'}}" bind:tap="refresh">
+      <view class="iconfont ghub-Loading"></view>
+      <view class="iconfont ghub-top"></view>
+    </view>
   </view>
 </view>
 

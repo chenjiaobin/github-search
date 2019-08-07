@@ -36,7 +36,8 @@ Component({
     // scroll-view的滚动距离
     scrollTop: 0,
     noMore: false,
-    loadingMore: false
+    loadingMore: false,
+    isTop: false
   },
 
   lifetimes: {
@@ -61,8 +62,19 @@ Component({
       this.getRepo()
     },
 
+    scroll (e) {
+      if (e.detail.scrollTop >= app.globalData.screenHeight) {
+        this.setData({
+          isTop: true
+        })
+      } else {
+        this.setData({
+          isTop: false
+        })
+      }
+    },
+
     loadMore () {
-      console.log('更多')
       this.setData({
         "search.page":  this.data.search.page + 1,
         noMore: false,
@@ -131,7 +143,6 @@ Component({
         this.setData({
           loading: false
         })
-        console.log(err)
       })
     },
     
@@ -269,7 +280,6 @@ Component({
     },
 
     follow (username) {
-      console.log('成功')
       githubApi.followUser({ username }).catch(err => {
         if (!err) {
           wx.showToast({
@@ -281,7 +291,6 @@ Component({
     },
 
     unFollow (username) {
-      console.log('为')
       githubApi.unFollowUser({ username }).catch(err => {
         if (!err) {
           wx.showToast({
@@ -294,10 +303,16 @@ Component({
 
     // 刷新页面
     refresh () {
-      wx.showLoading({
-        title: '正在加载...'
-      })
-      this.getRepo()
+      if (this.data.isTop) {
+        this.setData({
+          scrollTop: 0
+        })
+      } else {
+        wx.showLoading({
+          title: '正在加载...'
+        })
+        this.getRepo()
+      }
     }
   }
 })

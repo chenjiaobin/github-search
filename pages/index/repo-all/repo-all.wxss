@@ -82,10 +82,20 @@ view {
   bottom: 250rpx;
   right: 50rpx;
   background: rgb(241, 241, 241);
+  color: #000;
   border: 1px solid rgb(241, 241, 241);
   border-radius: 50%;
   width: 70rpx;
   height: 70rpx;
   text-align: center;
   line-height: 70rpx;
+  overflow: hidden;
+}
+.top-start {
+  transform: translateY(0rpx);
+	transition: all 0.18s linear;
+} 
+.top-end {
+  transform: translateY(-70rpx);
+	transition: all 0.18s linear;
 }

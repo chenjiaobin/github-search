@@ -57,9 +57,24 @@ Component({
           title: '请输入账户名进行查询',
           icon: 'none'
         })
+        return
       }
-      this.getUserInfo()
-      this.getRepo()
+      wx.showLoading({
+        title: '正在加载...'
+      })
+      Promise.all([this.getUserInfo(), this.getRepo()]).then(res => {
+        if (!res[1].data.length) {
+          this.setData({
+            repos: []
+          })
+        }
+        wx.hideLoading()
+      }).catch(err => {
+        wx.showToast({
+          title: '接口异常',
+          icon: 'none'
+        })
+      })
     },
 
     searchChange (e) {
@@ -79,64 +94,73 @@ Component({
 
     // 获取用户信息
     getUserInfo () {
-      githubApi.getCurrentUser({ username: this.data.username }).then(res => {
-        console.log(res)
-        let data = res.data
-        this.setData({
-          user: {
-            avatar: data.avatar_url,
-            account: data.login,
-            name: data.name,
-            blog: data.blog,
-            bio: data.bio,
-            following: data.following,
-            followers: data.followers
-          }
+      return new Promise((resolve, reject) => {
+        githubApi.getCurrentUser({ username: this.data.username }).then(res => {
+          console.log(res)
+          let data = res.data
+          this.setData({
+            user: {
+              avatar: data.avatar_url,
+              account: data.login ? data.login : '暂无',
+              name: data.name ? data.name : '暂无',
+              blog: data.blog ? data.blog : '暂无',
+              bio: data.bio ? data.bio : '暂无',
+              following: data.following,
+              followers: data.followers
+            }
+          })
+          resolve(res)
+        }).catch(err => {
+          reject(err)
         })
       })
     },
 
     // 获取仓库数据
     getRepo(page = 1) {
-      let params = {
-        username: this.data.username,
-        params: {
-          page: page,
-          per_page: this.data.search.per_page
+      return new Promise((resolve, reject) => {
+        let params = {
+          username: this.data.username,
+          params: {
+            page: page,
+            per_page: this.data.search.per_page
+          }
         }
-      }
-      githubApi.getYourRepos(params).then(res => {
-        this.setData({
-          loadingMore: false
-        })
-        if (!res.data.length) {
+        githubApi.getYourRepos(params).then(res => {
+          console.log(res)
           this.setData({
-            'search.page': this.data.search.page - 1,
-            noMore: true
+            loadingMore: false
           })
-        } else {
-          if (page === 1) {
+          if (!res.data.length) {
             this.setData({
-              repos: [].concat(res.data)
-            })
-            this.setData({
-              scrollTop: 0
+              'search.page': this.data.search.page - 1,
+              noMore: true
             })
           } else {
+            if (page === 1) {
+              this.setData({
+                repos: [].concat(res.data)
+              })
+              this.setData({
+                scrollTop: 0
+              })
+            } else {
+              this.setData({
+                repos: this.data.repos.concat(res.data)
+              })
+            }
             this.setData({
-              repos: this.data.repos.concat(res.data)
+              loading: false,
+              noMore: false
             })
           }
+          resolve(res)
+        }).catch(err => {
           this.setData({
-            loading: false,
-            noMore: false
+            loading: false
           })
-        }
-      }).catch(err => {
-        this.setData({
-          loading: false
+          reject(err)
         })
-        console.log(err)
       })
     },
   }

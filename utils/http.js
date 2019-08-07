@@ -27,9 +27,9 @@ http.interceptors.request.use(request => {
     "Authorization": auth
   }
 
-  // 设置token,因为github有些接口是需要权限验证，token需要用户自己在github上生成(第一种认证)
+  // 设置token,因为github有些接口是需要权限验证，token需要用户自己在github上生成(第一种认证),token-key在github上生成就行了
   // request.headers = {
-  //   "Authorization": 'token d9b0878a0073304b530334120d59d009e41438dd'
+  //   "Authorization": 'token token-key'
   // }
 
   // 这种是base Auth认证，需要用户输入账号和密码(第二种认证)
