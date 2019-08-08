@@ -124,5 +124,13 @@ Page({
     wx.navigateTo({
       url: '/pages/about/about',
     })
+  },
+
+  // 清楚缓存
+  clear () {
+    wx.clearStorage()
+    wx.showToast({
+      title: '缓存清除成功'
+    })
   }
 })

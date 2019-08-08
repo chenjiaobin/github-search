@@ -2,9 +2,9 @@
 page {
   background: #F3F3F3;
 }
-.gh-me {
+/* .gh-me {
   background: #fff;
-}
+} */
 .label-self {
   font-size: 36rpx;
 }
@@ -16,6 +16,7 @@ page {
   display: flex;
   border-bottom: 2rpx solid #eaecef;
   padding: 10rpx;
+  background: #fff;
 }
 .gh-me__avatar {
   flex: 150rpx 0 0;
@@ -53,4 +54,11 @@ page {
 }
 .button-hover {
   color: #000;
+}
+.gh-me__tab {
+  background: #fff;
+}
+.gh-me__other {
+  background: #fff;
+  margin-top: 40rpx;
 }

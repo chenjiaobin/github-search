@@ -24,4 +24,11 @@
       </van-cell>
     </van-cell-group>
   </view>
+  <view class="gh-me__other">
+    <van-cell-group>
+      <van-cell title="清除缓存" is-link size="large" bind:click="clear">
+        <text slot="icon" name="icon" class="iconfont ghub-qingchuhuancun customer-icon customer-icon__help"/>
+      </van-cell>
+    </van-cell-group>
+  </view>
 </view>

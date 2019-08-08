@@ -27,7 +27,11 @@
     </view>
     <view class="gh-tip__item">
       <text class="tip_index">6、</text>
-      <text class="tip_text">项目GitHub地址：<text style="color: #2db7f5">https://github.com/chenjiaobin/github-search</text></text>
+      <text class="tip_text">如果出现数据刷不出来，请清除缓存重新登录</text>
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">7、</text>
+      <view class="tip_text" style="display: inline-block">项目GitHub地址：<view style="color: #2db7f5; display: inline-block" data-text="https://github.com/chenjiaobin/github-search" bind:tap="copy">https://github.com/chenjiaobin/github-search</view></view>
     </view>
   </view>
 </view>

@@ -66,5 +66,18 @@ Page({
       imageUrl: '../../assets/img/share.jpg',
       path: '/pages/index/index'
     }
+  },
+
+  copy (e) {
+    let { text } = e.currentTarget.dataset
+    wx.setClipboardData({
+      data: text,
+      success () {
+        wx.showToast({
+          title: '复制成功',
+          icon: 'none'
+        })
+      }
+    })
   }
 })
