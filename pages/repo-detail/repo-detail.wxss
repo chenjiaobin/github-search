@@ -21,3 +21,29 @@
   text-align: center;
   line-height: 70rpx;
 }
+
+.start {
+  animation: fade-in .5s forwards
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.end {
+	animation: fade-out .5s forwards
+}
+@keyframes fade-out{
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

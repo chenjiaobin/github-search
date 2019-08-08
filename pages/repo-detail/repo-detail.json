@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "van-steps": "../../miniprogram_npm/vant-weapp/steps/index"
+    "van-steps": "../../miniprogram_npm/vant-weapp/steps/index",
+    "no-data": "../../components/nodata/nodata"
   },
   "navigationBarTitleText": "提交记录"
 }

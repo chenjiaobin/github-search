@@ -6,7 +6,8 @@
     active="{{ active }}"
     custom-class="gh-step-color"
   />
-  <view class="gh-refresh" bindtap="goTop">
+  <no-data text="{{loadingText}}" wx:if="{{show}}"></no-data>
+  <view class="gh-refresh {{isTop?'start':'end'}}" bindtap="goTop" wx:if="{{isTop}}">
     <text class="iconfont ghub-top"></text>
   </view>
 </view>
