@@ -6,7 +6,7 @@
 * 图标库icon用的是阿里云的icon图标（https://www.iconfont.cn/manage/index?spm=a313x.7781069.1998910419.db775f1f3&manage_type=myprojects&projectId=1276755&keyword=）
 
 # 微信扫一扫使用
-![](https://raw.githubusercontent.com/chenjiaobin/github-search/master/assets/img/weapp.jpg?token=AFYTS764H36DGHGTDINN7NK5JOJTO)
+![](https://raw.githubusercontent.com/chenjiaobin/github-search/master/assets/img/weapp.jpg?token=AFYTS7YN2KH5B2QBTQK5LBC5JOKKI)
 
 
 ~如果觉得还OK，点个赞👍再走呗😀
