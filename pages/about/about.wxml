@@ -1,6 +1,6 @@
 <!--pages/about/about.wxml-->
 <view class="gh-tip">
-  <view class="gh-tip__title"><text class="iconfont ghub-icon20101 tip-icon"></text>应用小贴士</view>
+  <!-- <view class="gh-tip__title"><text class="iconfont ghub-icon20101 tip-icon"></text>应用小贴士</view> -->
   <view class="gh-tip__intro">
     <text class="gh-tip__logo">GitHub小应用</text>旨在帮助程序员在日常中更好的管理和查询GitHub相关信息。
   </view>
@@ -24,6 +24,10 @@
     <view class="gh-tip__item">
       <text class="tip_index">5、</text>
       <text class="tip_text">star和follow：在首页的仓库列表可以点击star和follow仓库（Tip：需要GitHub凭证认证，所以请先登陆实现认证才可使用）</text>
+    </view>
+    <view class="gh-tip__item">
+      <text class="tip_index">6、</text>
+      <text class="tip_text">项目GitHub地址：<text style="color: #2db7f5">https://github.com/chenjiaobin/github-search</text></text>
     </view>
   </view>
 </view>
