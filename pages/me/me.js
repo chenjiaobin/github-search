@@ -132,5 +132,15 @@ Page({
     wx.showToast({
       title: '缓存清除成功'
     })
+  },
+
+  // 跳转到垃圾分类小程序
+  rubbish_weapp () {
+    wx.navigateToMiniProgram({
+      appId: 'wxdc8cbe6d135617ce',
+      success () {
+        console.log('成功了')
+      }
+    })
   }
 })

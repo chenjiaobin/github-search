@@ -22,6 +22,9 @@
         <button class="gh-contact" slot="title" open-type="contact" hover-stop-propagation="true">客服服务</button>
         <text slot="icon" name="icon" class="iconfont ghub-kefu customer-icon customer-icon__about"/>
       </van-cell>
+      <van-cell title="垃圾分类小程序" is-link size="large" bind:click="rubbish_weapp">
+        <text slot="icon" name="icon" class="iconfont ghub-xiaochengxu customer-icon customer-icon__about"/>
+      </van-cell>
     </van-cell-group>
   </view>
   <view class="gh-me__other">
