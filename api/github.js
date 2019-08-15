@@ -1,6 +1,16 @@
 import http from '../utils/http'
 
-// github API文档 （https://developer.github.com/v3/search/）
+/**
+github API文档 （https://developer.github.com/v3/search/）
+状态码：
+200 -- 一切正常，返回了要求的结果
+301 -- 服务器将该请求重定向到其他网站
+401 -- 身份认证出错
+400 -- 服务器认为这是一个错误请求
+403 -- 你无权访问该资源
+404 -- 访问的资源不存在
+*/
+
 
 // 获取当前用户的follows用户
 export const getFollower = (params) => {
