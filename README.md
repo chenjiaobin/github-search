@@ -1,3 +1,7 @@
+# 简述
+
+github-search利用GitHub开放API开发的一个便携式查看开源仓库和个人仓库的的小程序
+
 # github-search小应用
 * 微信小程序原生实现
 * UI用的是有赞的vant-weapp（https://youzan.github.io/vant-weapp/#/intro）
