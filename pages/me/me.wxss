@@ -62,3 +62,8 @@ page {
   background: #fff;
   margin-top: 40rpx;
 }
+.ad-container {
+  position: fixed;
+  right: 20rpx;
+  bottom: 120rpx;
+}

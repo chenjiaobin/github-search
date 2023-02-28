@@ -1,13 +1,15 @@
 /* components/nodata/nodata.wxss */
 .no-data {
-	padding: 2em 0;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .no-data__img {
-	width: 280rpx;
-	height: 280rpx;
+	width: 200rpx;
+	height: 200rpx;
 }
 .no-data__text {
-	font-size: 52rpx;
+	font-size: 30rpx;
 	color: #ccc;
 }

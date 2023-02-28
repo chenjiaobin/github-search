@@ -34,4 +34,7 @@
       </van-cell>
     </van-cell-group>
   </view>
+  <view class="ad-container">
+    <ad-custom unit-id="adunit-5283f82f6ef27662"></ad-custom>
+  </view>
 </view>

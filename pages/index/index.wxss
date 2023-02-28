@@ -1,9 +1,22 @@
 /**index.wxss**/
 .container {
   background: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+.gh-head {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .gh-tab {
   padding: 0 40rpx;
+  flex: 0 0 70rpx;
+}
+.ad-container {
+  flex: 0 0 50rpx;
+  /* justify-self: center;
+  width: 100%; */
 }
 .gh-tab-item {
   display: inline-block;

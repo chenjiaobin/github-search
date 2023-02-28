@@ -27,10 +27,13 @@
   padding: 20rpx;
 }
 .gh-swiper-box {
-  height: calc(100vh - 70rpx);
+  /* height: calc(100vh - 70rpx); */
+  flex: 1;
 }
 .gh-swiper-box-list {
-  height: calc(100vh - 140rpx)
+  /* height: calc(100vh - 140rpx) */
+  flex: 1;
+  overflow-y: auto;
 }
 
 /* 背景色 */

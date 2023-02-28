@@ -15,6 +15,9 @@
         </view>
       </scroll-view>
     </view>
+    <view class="ad-container">
+      <ad unit-id="adunit-ba97d61e9caf2974"></ad>
+    </view>
     <swiper class="gh-swiper-box" current="{{tabCur}}" :duration="300" bindchange="changeTab">
       <swiper-item>
         <repo-all></repo-all>

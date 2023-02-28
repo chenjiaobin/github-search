@@ -84,6 +84,7 @@ Component({
     },
 
     loadMore () {
+      if (!this.data.repos.length && !this.data.loading) { return }
       this.setData({
         "search.page": this.data.search.page + 1,
         noMore: false,

@@ -7,9 +7,14 @@ view {
   word-break: break-all;
 }
 .gh-repo_search-all {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
   color: #8a8a8a;
-  height: calc(100vh - 140rpx);
+  /* height: calc(100vh - 140rpx); */
+  flex: 1;
+  overflow: hidden;
 }
 .gh-repo_search-contain {
   padding: 0 10rpx 20rpx 10rpx;
@@ -22,8 +27,7 @@ view {
   display: inline-block;
 }
 .no-data__type {
-  margin-top: 30rpx;
-  margin-bottom: 150px;
+  margin: 0 30rpx;
 }
 .gh-repo_list {
   margin: 10rpx 0;
@@ -33,7 +37,9 @@ view {
   text-align: left;
   margin: 0 20rpx;
   padding: 16rpx;
-  border-bottom: 1px solid #eaecef;
+}
+.gh-repo_item~.gh-repo_item {
+  border-top: 1px solid #eaecef;
 }
 .gh-repo__title {
   font-size: 32rpx;
@@ -79,7 +85,7 @@ view {
 }
 .gh-refresh {
   position: fixed;
-  bottom: 250rpx;
+  bottom: 130rpx;
   right: 50rpx;
   background: rgb(241, 241, 241);
   color: #000;
